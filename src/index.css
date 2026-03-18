@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap");
+
+@theme {
+  /* ================= BREAKPOINTS ================= */
+  --breakpoint-xs: 390px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* ================= CONTAINER ================= */
+  --container-center: true;
+  --container-padding: 1rem;
+
+  /* ================= FONTS ================= */
+  --font-family-montserrat: "Montserrat", sans-serif;
+  --font-family-display: "Cormorant Garamond", serif;
+  --font-family-mono-custom: "DM Mono", monospace;
+
+  /* ================= COLORS ================= */
+  --color-bazar-bg: #f5f2ed;
+  --color-bazar-card: #faf8f4;
+  --color-bazar-border: #e2ddd5;
+  --color-bazar-border-light: #eeebe5;
+  --color-bazar-text: #1a1510;
+  --color-bazar-muted: #a09480;
+  --color-bazar-placeholder: #c4b9a8;
+  --color-bazar-accent: #c4a882;
+  --color-bazar-dark: #3d2e1e;
+  --color-bazar-ink: #8a7560;
+
+  /* ================= SHADOWS ================= */
+  --shadow-primary: 0 0 23px 0 #9494942b;
+}
+
+/* ================= BASE ================= */
+body {
+  font-family: var(--font-family-mono-custom);
+  background: var(--color-bazar-bg);
+}
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d5cec5;
+  border-radius: 2px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.item-enter {
+  animation: slideIn 0.25s ease;
+}
+
+.removing {
+  opacity: 0;
+  transform: translateX(20px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+/* ================= LIST ITEM INTERACTIONS ================= */
+.del-btn {
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    color 0.2s;
+}
+.list-item:hover .del-btn {
+  opacity: 1;
+}
